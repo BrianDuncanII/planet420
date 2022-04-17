@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Planet 420</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="mobile/assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+
+    <script src="https://kit.fontawesome.com/c0a6897b31.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="animations.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="offcanvas" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">Inventory <i class="fa-solid fa-boxes-stacked"></i></div>
+        <div class="right"></div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+        <div class="section full mt-2 mb-2">
+            
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradiof" id="btnradioq1" onclick="currentInventoryButton()" checked>
+            <label class="btn btn-outline-primary" for="btnradioq1">
+                <i style="margin-right: 1em;" class="fa-solid fa-boxes-stacked"></i>
+                Current Inventory
+            </label>
+
+            <input type="radio" class="btn-check" name="btnradiof" id="btnradioq2" onclick="addToInventoryButton()">
+            <label class="btn btn-outline-primary" for="btnradioq2">
+                <i style="margin-right: 1em;" class="fa-solid fa-truck-ramp-box"></i>
+                Add to Inventory
+            </label>
+        </div>
+        <div class="divider mt-2 mb-3"></div>
+        </div>
+
+        <div id="addToInventoryForm" class="section full mb-2 fade-in" hidden>
+            <div class="wide-block pb-1 pt-2 scale-in-ver-top">
+                <form>
+                    <div class="form-group basic animated">
+                        
+                        <div class="input-wrapper">
+                            <label class="form-label" for="name2">Product Name</label>
+                            <input type="text" class="form-control" id="name2" placeholder="Product Name">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group basic animated">
+                        <div class="input-wrapper">
+                            <label class="form-label" for="number2">Wholesale Price</label>
+                            <input type="number" class="form-control" id="email2" placeholder="Wholesale Price">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group basic animated">
+                        <div class="input-wrapper">
+                            <label class="form-label" for="password2">Store Price</label>
+                            <input type="number" class="form-control" id="password2" placeholder="Store Price"
+                                autocomplete="off">
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="form-label" for="city4">Product Type</label>
+                            <select class="form-control form-select" id="city4">
+                                <option value="0">Select a type</option>
+                                <option value="1">Waterpipes</option>
+                                <option value="2">Handpipes</option>
+                                <option value="3">Nicotine Disposables</option>
+                                <option value="3">Wax Vaporizers</option>
+                                <option value="4">Batteries</option>
+                                <option value="3">E-Juices</option>
+                                <option value="3">Flower/Bud/Pre-rolls</option>
+                                <option value="3">Edibles</option>
+                                <option value="3">Tinctures/Oils</option>
+                                <option value="3">Bowls/Bangers/Down-stems</option>
+                                <option value="3">Rolling Trays</option>
+                                <option value="3">Clothing</option>
+                                <option value="3">Incense/Essential Oils/Candles/Cones</option>
+                                <option value="3">Cigarillos/Wraps</option>
+                                <option value="3">Papers/Cones</option>
+                                <option value="4">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group basic animated">
+                    <div class="input-wrapper">
+                        <label class="form-label" for="number2">Quantity</label>
+                        <input type="number" class="form-control" id="password2" placeholder="Quantity"
+                            autocomplete="off">
+                        <i class="clear-input">
+                            <ion-icon name="close-circle"></ion-icon>
+                        </i>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary rounded shadowed  me-1 mb-1">Add to Inventory</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <i class="fa-solid fa-house fa-3x"></i>
+            </div>
+        </a>
+        <a href="inventory.html" class="item">
+            <div class="col">
+                <i class="fa-solid fa-boxes-stacked fa-3x"></i>
+            </div>
+        </a>
+        <a href="staff.html" class="item">
+            <div class="col">
+                <i class="fa-solid fa-people-group fa-3x"></i>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+        <div class="offcanvas-body">
+            <!-- profile box -->
+            <div class="profileBox">
+                <div class="image-wrapper">
+                    <img style="width: 15em;" src="img/planet420logo.png">
+                </div>
+                <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </div>
+            <!-- * profile box -->
+
+            <ul class="listview flush transparent no-line image-listview mt-2">
+                <li>
+                    <a href="index.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Home
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="inventory.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="cube-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            Inventory
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff.html" class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="layers-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Staff</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="icon-box bg-primary">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </div>
+                        <div class="in">
+                            <div>Dark Mode</div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodesidebar">
+                                <label class="form-check-label" for="darkmodesidebar"></label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        <!-- * sidebar buttons -->
+    </div>
+    <!-- * App Sidebar -->
+
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+    <script src="mobile/assets/js/lib/bootstrap.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="mobile/assets/js/plugins/splide/splide.min.js"></script>
+    <!-- ProgressBar js -->
+    <script src="mobile/assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+    <!-- Base Js File -->
+    <script src="mobile/assets/js/base.js"></script>
+
+</body>
+
+</html>
